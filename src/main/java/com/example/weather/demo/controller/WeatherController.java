@@ -3,6 +3,7 @@ package com.example.weather.demo.controller;
 import com.example.weather.demo.service.LambdaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,11 @@ public class WeatherController {
 
     @GetMapping("/alerts")
     public String getWeatherAlerts() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
+
+    @PostMapping("/send/weekly")
+    public String postWeatherForecast() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
 }
