@@ -13,4 +13,5 @@ public class Weather {
     private Long id;
     private String city;
     private String forecast;
+    private String alert;
 }
