@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: This is a sample API definition using Swagger/OpenAPI.
+  version: 1.0.0
+
+paths:
+  /hello:
+    get:
+      summary: Endpoint to greet the user
+      description: Returns a simple greeting message
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, world!
