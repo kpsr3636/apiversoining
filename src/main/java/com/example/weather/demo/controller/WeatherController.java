@@ -34,4 +34,9 @@ public class WeatherController {
     public String postWeatherForecast() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
+
+    @PostMapping("/send/alerts")
+    public String postWeatherForecastAlerts() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
 }
