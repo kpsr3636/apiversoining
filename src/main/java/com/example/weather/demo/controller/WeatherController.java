@@ -2,10 +2,7 @@ package com.example.weather.demo.controller;
 
 import com.example.weather.demo.service.LambdaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -37,6 +34,10 @@ public class WeatherController {
 
     @PostMapping("/send/alerts")
     public String postWeatherForecastAlerts() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
+    @DeleteMapping("/delete")
+    public String postWeatherForecastAlertsDelete() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
 }
