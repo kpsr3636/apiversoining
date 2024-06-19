@@ -40,4 +40,9 @@ public class WeatherController {
     public String postWeatherForecastAlertsDelete() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
+
+    @DeleteMapping("/delete/aletrs")
+    public String postWeatherForecastAlertsDeleteAletrs() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
 }
