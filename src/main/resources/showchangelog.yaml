@@ -1,0 +1,25 @@
+name: Show Change Log
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  show-log:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get the latest commit messages
+        run: |
+          echo "Recent commits:"
+          git log -n 5 --pretty=format:"%h - %s (%an, %ar)"
+
+      - name: Display commit messages in the log
+        run: |
+          echo "Recent commits:"
+          git log -n 5 --pretty=format:"%h - %s (%an, %ar)"

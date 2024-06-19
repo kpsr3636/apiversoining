@@ -1,0 +1,38 @@
+name: Postman Collection Change Log
+
+on:
+  push:
+    paths:
+      - "postman_collections/**"
+  workflow_dispatch:
+
+jobs:
+  show-changes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Get previous Postman collection
+        id: get_prev
+        run: |
+          git checkout HEAD^1
+          if [ -f postman_collections/your_collection.json ]; then
+            mv postman_collections/your_collection.json ../prev_collection.json
+          fi
+          git checkout -
+
+      - name: Compare Postman collections
+        run: |
+          if [ -f ../prev_collection.json ]; then
+            diff ../prev_collection.json postman_collections/your_collection.json > collection_diff.txt || true
+          else
+            echo "No previous collection to compare against." > collection_diff.txt
+          fi
+
+      - name: Display changes in Postman collection
+        run: cat collection_diff.txt
