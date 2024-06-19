@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "02e95f09-2a4a-4f80-8054-f65142a47c40",
+		"name": "Weather Forecast API Copy",
+		"description": "API for retrieving weather forecasts using AWS Lambda functions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33420634"
+	},
+	"item": [
+		{
+			"name": "weather",
+			"item": [
+				{
+					"name": "current",
+					"item": [
+						{
+							"name": "Get current weather",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/weather/current",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"weather",
+										"current"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/weather/current",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"weather",
+												"current"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Error response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/weather/current",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"weather",
+												"current"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "weekly",
+					"item": [
+						{
+							"name": "Get weekly forecast",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/weather/weekly",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"weather",
+										"weekly"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/weather/weekly",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"weather",
+												"weekly"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Error response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/weather/weekly",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"weather",
+												"weekly"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "alerts",
+					"item": [
+						{
+							"name": "Get weather alerts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/weather/alerts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"weather",
+										"alerts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/weather/alerts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"weather",
+												"alerts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Error response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/weather/alerts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"weather",
+												"alerts"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
