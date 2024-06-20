@@ -50,4 +50,9 @@ public class WeatherController {
     public String updateWeatherForecastAlerts() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
+
+    @PutMapping("/update/weekly")
+    public String updateWeatherForecastWeekly() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
 }
