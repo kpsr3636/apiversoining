@@ -14,4 +14,5 @@ public class Weather {
     @Column(name = "alert_type")
     private String alertType;
     private String alertLevel;
+    private String alertDescription;
 }
