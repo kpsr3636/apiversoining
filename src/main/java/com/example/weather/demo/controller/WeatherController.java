@@ -55,4 +55,9 @@ public class WeatherController {
     public String updateWeatherForecastWeekly() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
+
+    @DeleteMapping("/update/weekly")
+    public String deleteWeatherForecastWeekly() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
 }
