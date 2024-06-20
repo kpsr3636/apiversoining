@@ -1,0 +1,303 @@
+{
+  "info": {
+    "_postman_id": "b5284103-d1fb-4297-8bd8-7bdf79640faf",
+    "name": "Weather Forecast API",
+    "description": "API for retrieving weather forecasts using AWS Lambda functions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_uid": "33420634-b5284103-d1fb-4297-8bd8-7bdf79640faf"
+  },
+  "item": [
+    {
+      "name": "weather",
+      "item": [
+        {
+          "name": "current",
+          "item": [
+            {
+              "name": "Get current weather",
+              "id": "bcfe53da-763a-4a6f-ad84-909e03751ff1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/weather/current",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "weather",
+                    "current"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "aa141ce3-4a3e-4545-8b5a-9dbc9b2fe20d",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/weather/current",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "weather",
+                        "current"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "uuid": "7cd74f08-aec6-4ae5-9700-92bb560a25ea"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "<string>"
+                },
+                {
+                  "id": "d220ce25-2867-4772-bb07-209f9c9244f4",
+                  "name": "Error response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/weather/current",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "weather",
+                        "current"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "id": "c1e32ad6-187d-48a8-803b-bb13daf5c08c"
+        },
+        {
+          "name": "weekly",
+          "item": [
+            {
+              "name": "Get weekly forecast",
+              "id": "b0b2184f-ea3f-4295-86fa-2a5ffdd8a532",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/weather/weekly",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "weather",
+                    "weekly"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "64149f8a-f90d-40b9-9697-d755ba5ea330",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/weather/weekly",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "weather",
+                        "weekly"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "uuid": "e076559d-d7b8-445a-8927-713d19b92fc4"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "<string>"
+                },
+                {
+                  "id": "0787f8d9-8ec8-4d16-8271-b0f629399b38",
+                  "name": "Error response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/weather/weekly",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "weather",
+                        "weekly"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "id": "dc2f4396-42f5-45a3-a564-79478d298fe6"
+        },
+        {
+          "name": "alerts",
+          "item": [
+            {
+              "name": "Get weather alerts",
+              "id": "da474a5e-3ba2-48b8-8713-cda506fb5433",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/weather/alerts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "weather",
+                    "alerts"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "76f78745-f97b-419e-a94d-3e6272cb9579",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/weather/alerts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "weather",
+                        "alerts"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "uuid": "95b968e1-120c-4621-a509-ee7ce06458cf"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "<string>"
+                },
+                {
+                  "id": "84c931ca-a3a3-41d0-a61d-06e3eb91866b",
+                  "name": "Error response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/weather/alerts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "weather",
+                        "alerts"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "id": "9f2c91f4-97c4-44db-9995-10ceb4a8cef7"
+        }
+      ],
+      "id": "b7fd800e-dd9b-4fb7-84d3-a1eb72ced248"
+    }
+  ],
+  "variable": [
+    {
+      "id": "eb760b32-bea5-4942-9488-b4f51124ffa4",
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
