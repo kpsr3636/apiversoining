@@ -1,0 +1,43 @@
+name: Publish Postman Collection
+
+on:
+  push:
+    paths:
+      - "postman_collections/**"
+  workflow_dispatch:
+
+jobs:
+  publish-collection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Export Postman collection
+        run: |
+          postman-collection-exporter postman_collections/your_collection.json > exported_collection.json
+
+      - name: Upload collection
+        uses: actions/upload-artifact@v2
+        with:
+          name: postman-collection
+          path: exported_collection.json
+
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.sha }}
+          release_name: "Postman Collection Update"
+          body: "Updated Postman collection"
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload collection to release
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: exported_collection.json
+          asset_name: postman_collection_${{ github.sha }}.json
+          asset_content_type: application/json
