@@ -45,4 +45,9 @@ public class WeatherController {
     public String postWeatherForecastAlertsDeleteAletrs() {
         return lambdaService.invokeLambda("alertsFunction", "{}");
     }
+
+    @PutMapping("/update/aletrs")
+    public String updateWeatherForecastAlerts() {
+        return lambdaService.invokeLambda("alertsFunction", "{}");
+    }
 }
