@@ -1,9 +1,6 @@
 package com.example.weather.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Weather {
@@ -14,5 +11,6 @@ public class Weather {
     private String city;
     private String forecast;
     private String alert;
+    @Column(name = "alert_type")
     private String alertType;
 }
