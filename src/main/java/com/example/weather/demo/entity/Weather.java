@@ -15,4 +15,5 @@ public class Weather {
     private String alertType;
     private String alertLevel;
     private String alertDescription;
+    private String alertInstruction;
 }
