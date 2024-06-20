@@ -14,4 +14,5 @@ public class Weather {
     private String city;
     private String forecast;
     private String alert;
+    private String alertType;
 }
