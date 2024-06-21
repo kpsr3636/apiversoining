@@ -16,4 +16,6 @@ public class Weather {
     private String alertLevel;
     private String alertDescription;
     private String alertInstruction;
+    private String alertSender;
+    private String alertTime;
 }
